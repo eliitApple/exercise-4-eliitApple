@@ -1,8 +1,7 @@
 package com.serenitydojo;
 
-public class Dog {
+public class Dog extends Pet {
 
-    public String name;
     public String favoriteToy;
     public int age;
 
@@ -15,14 +14,11 @@ public class Dog {
     }
 
     public Dog(String name, String favoriteToy, int age) {
-        this.name = name;
+        super(name);
         this.favoriteToy = favoriteToy;
         this.age = age;
     }
 
-    public String getName() {
-        return name;
-    }
 
     public String getFavoriteToy() {
         return favoriteToy;
