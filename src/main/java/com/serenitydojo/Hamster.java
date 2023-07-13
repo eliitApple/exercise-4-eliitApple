@@ -18,4 +18,9 @@ public class Hamster extends Pet {
     public int getAge() {
         return age;
     }
+
+    @Override
+    public String makeNoise() {
+        return "Squeak";
+    }
 }

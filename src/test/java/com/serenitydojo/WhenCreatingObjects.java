@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import static com.serenitydojo.Cat.usualFood;
-import static com.serenitydojo.Dog.makeNoise;
 
 public class WhenCreatingObjects {
 
@@ -32,12 +31,11 @@ public class WhenCreatingObjects {
         spot.makeNoise();
         spot.feed("Salmon");
         System.out.println(Cat.usualFood());
-        System.out.println(usualFood());
+        System.out.println("Felix goes " + felix.makeNoise());
     }
 
     @Test
     public void creating_a_dog() {
-        Pet hamster = new Pet("Rusty");
         Dog fido = new Dog("Fido","Bone", 5);
         Assert.assertEquals(fido.getName(), "Fido");
         Assert.assertEquals(fido.getFavoriteToy(), "Bone");
@@ -45,9 +43,17 @@ public class WhenCreatingObjects {
     }
 
     @Test
+    public void dog_makes_noise() {
+        Dog fido = new Dog("Fido", "Bone", 5);
+
+        System.out.println("Fido goes " + fido.makeNoise());
+
+    }
+
+    @Test
     public void whenADogBarks() {
         Dog fido = new Dog("Fido","Bone", 5);
-        String dogSound = makeNoise();
+        String dogSound = fido.makeNoise();
 
         Assert.assertEquals(dogSound, "Woof");
     }
@@ -71,4 +77,17 @@ public class WhenCreatingObjects {
         Assert.assertEquals(rusty.getAge(), 1);
 
     }
+
+    @Test
+    public void pets_make_noise() {
+        Pet felix = new Cat("Felix", 4);
+        Pet fido = new Dog("Fido", "Bone", 5);
+        Pet rusty = new Hamster("Rusty", "Wheel", 1);
+
+        System.out.println("Felix goes " + felix.makeNoise());
+        System.out.println("Fido goes " + fido.makeNoise());
+        System.out.println("Rusty goes " + rusty.makeNoise());
+    }
+
+
 }

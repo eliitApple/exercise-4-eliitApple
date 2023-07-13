@@ -34,8 +34,9 @@ public class Cat extends Pet {
         return favouriteFood;
     }
 
-    public void makeNoise() {
-        System.out.println(CAT_NOISE);
+    @Override
+    public String makeNoise() {
+        return CAT_NOISE;
     }
 
     public void feed(String food) {

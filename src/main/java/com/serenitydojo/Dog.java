@@ -9,7 +9,7 @@ public class Dog extends Pet {
 
     public static final String DOG_NOISE = "Woof";
 
-    public static String makeNoise() {
+    public String makeNoise() {
         return DOG_NOISE;
     }
 
@@ -35,4 +35,5 @@ public class Dog extends Pet {
     public boolean isFed() {
         return isFed;
     }
+
 }
